@@ -1,0 +1,25 @@
+#!/bin/bash
+#
+# ~/.bspwmrc
+#
+
+bspc config window_gap 32
+bspc config border_width 2
+bspc config top_padding 40
+
+bspc monitor -d 1 2 3
+
+bspc config split_ratio 0.5
+bspc config borderless_monocle true
+bspc config gapless_monocle true
+bspc config focus_by_distance true
+bspc config focus_follows_pointer true
+
+bspc config focused_border_color "#775759"
+bspc config normal_border_color "#352f2b"
+bspc config active_border_color "#817267"
+bspc config presel_border_color "#c0b18b"
+
+bspc rule -a urxvt-launcher floating=on
+
+panel &

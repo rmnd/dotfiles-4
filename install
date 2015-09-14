@@ -1,0 +1,16 @@
+#!/bin/bash
+#
+# dotfiles installer
+
+dir="$(cd "$(dirname "$0")" && pwd)"
+files="$(cd "${dir}" && echo *)"
+ignore="README.md install"
+
+for file in ${ignore}; do
+  files="${files/$file}"
+done
+
+for file in ${files}; do
+  echo -e "\033[40;32mSymlinking ${file}\033[0m"
+  ln -snf "${dir}/${file}" "${HOME}/.${file}"
+done

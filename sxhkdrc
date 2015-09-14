@@ -1,0 +1,153 @@
+#
+# ~/.sxhkdrc
+#
+
+#
+# bspwm
+#
+
+# Kill wm
+super + alt + Escape
+  bspc quit; pkill panel; pkill redshift
+
+# Close window
+super + w
+  bspc window -c
+
+# Toggle monocle
+super + t
+  bspc desktop -l next
+
+# Balance tree
+super + b
+  bspc desktop -B
+
+# Rotate tree
+super + {u,i,o}
+  bspc desktop -R {180,270,90}
+
+# Toggle window tiling
+super + {s,p,f}
+  bspc window -t {floating,pseudo_tiled,fullscreen}
+
+# Focus or move window
+super + {_,shift + }{h,j,k,l}
+  bspc window -{f,s} {left,down,up,right}
+
+# Focus next or previous window
+super + {_,shift + }c
+  bspc window -f {next,prev}
+
+# Focus last window
+super + apostrophe
+  bspc window -f last
+
+# Resize window
+super + alt + {h,j,k,l}
+  bspc window -e {left -50,down +50,up -50,right +50}
+super + alt + shift + {h,j,k,l}
+  bspc window -e {right -50,up +50,down -50,left +50}
+
+# Move floating window
+super + {Left,Right,Up,Down}
+  xdo move {-x -50,-x +50,-y -50,-y +50}
+
+# Resize floating window
+super + alt + {Left,Right,Up,Down}
+  xdo resize {-w -50,-w +50,-h -50,-h +50}
+
+# Move window to desktop
+super + {_,shift + }{1-9,0}
+  bspc {desktop -f,window -d} ^{1-9,10}
+
+# Move window into presel
+super + y
+  bspc window -w last.manual
+
+# Presel window splitting
+super + ctrl + {h,j,k,l}
+  bspc window -p {left,down,up,right}
+
+# Reset presel
+super + ctrl + {_,shift + }space
+  bspc {window -p cancel,desktop -c}
+
+# Focus last desktop
+super + Tab
+  bspc desktop -f last
+
+# Focus window under the cursor
+~button1
+  bspc pointer -g focus
+
+# Move or resize window with mouse
+super + button{1-3}
+  bspc pointer -g {move,resize_side,resize_corner}
+
+# React to mouse clicks
+super + @button{1-3}
+  bspc pointer -u
+
+#
+# System
+#
+
+# Raise volume
+XF86AudioRaiseVolume
+  vol +5
+
+# Lower volume
+XF86AudioLowerVolume
+  vol -5
+
+# Toggle volume
+XF86AudioMute
+  vol toggle
+
+# Increase brightness
+XF86MonBrightnessUp
+  xbacklight +5
+
+# Decrease brightness
+XF86MonBrightnessDown
+  xbacklight -5
+
+# Max brightness
+shift + XF86MonBrightnessUp
+  xbacklight =100
+
+# Min brightness
+shift + XF86MonBrightnessDown
+  xbacklight =0
+
+# Suspend
+XF86Sleep
+  systemctl suspend
+
+#
+# Misc
+#
+
+# Terminal
+super + Return
+  "$TERMINAL"
+
+# Launcher
+super + space
+  launcher
+
+# Browser
+super + x
+  "$BROWSER"
+
+# Screenshot
+Print
+  scrot -e 'mv $f ~/pic/scrots'
+
+# Uploaded screenshot
+shift + Print
+  "$BROWSER" "$(scrot -e 'upload $f && mv $f ~/pic/scrots')"
+
+# Reload sxhkd
+super + Escape
+  pkill -USR1 -x sxhkd

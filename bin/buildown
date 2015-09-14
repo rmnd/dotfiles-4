@@ -1,0 +1,75 @@
+#!/bin/bash
+#
+# Markdown wrapper for CSS and recursive compilation
+
+CSS=~/.markdown.css
+
+html() {
+  cat << EOF
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1, maximuim-scale=1">
+${style}
+</head>
+<body>
+$(markdown --html4tags "$@")
+</body>
+</html>
+EOF
+}
+
+help='false'
+clean='false'
+embed='false'
+recursive='false'
+
+for arg; do
+  case "${arg}" in
+    -c|--clean) clean='true' ;;
+    -e|--embed) embed='true' ;;
+    -r|--recursive) recursive='true' ;;
+    -h|--help) help='true' ;;
+    *) files="${files} ${arg}"
+  esac
+done
+
+if [[ "${help}" = 'true' ]] ||
+   [[ "${recursive}" = 'false' && -z "${files}" ]]; then
+  cat << EOF
+usage: buildown [option ..] [file ..]
+
+  -c, --clean            remove compiled files, *.md.html
+  -e, --embed            embed CSS in <style>, instead of using <link>
+  -r, --recursive        recursively search for Markdown files
+
+EOF
+  exit 1
+fi
+
+if [[ "${recursive}" = 'true' ]]; then
+  files="$(find -type f | grep -e '/*\.md$')"
+fi
+
+if [[ ! -f "${CSS}" ]]; then
+  echo "warning: ${CSS} doesn't exist"
+fi
+
+if [[ "${embed}" = 'true' ]]; then
+  style='<style>'"$(cat "${CSS}")"'</style>'
+else
+  style='<link rel="stylesheet" href="'"${CSS}"'">'
+fi
+
+for file in ${files}; do
+  target="${file}.html"
+
+  if [[ "${clean}" = 'false' ]]; then
+    echo -e "\033[32;40mbuilding ${target}\033[0m"
+    html "${file}" > "${target}"
+  elif [[ -f "${target}" ]]; then
+    echo -e "\033[31;40mremoving ${target}\033[0m"
+    rm "${target}"
+  fi
+done

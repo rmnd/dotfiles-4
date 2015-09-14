@@ -1,0 +1,3 @@
+#!/bin/bash
+
+urxvt -geometry 80x4 -name 'urxvt-launcher' -e sh -c "bash -t"

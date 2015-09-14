@@ -1,0 +1,26 @@
+#!/bin/bash
+#
+# html file template
+
+html() {
+  cat << EOF
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+  </head>
+  <body>
+  </body>
+</html>
+EOF
+}
+
+if [[ $# -eq 0 ]]; then
+  echo "usage: html [file ..]"
+  exit 1
+fi
+
+for file; do
+  html > "${file}"
+done
