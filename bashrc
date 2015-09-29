@@ -33,11 +33,3 @@ alias reset="reset && reload"
 mkcd() {
   mkdir -p "$@" && cd "$@"
 }
-
-ddg() {
-  w3m "https://duckduckgo.com/lite?q=${*/\ /+}"
-}
-
-wiki() {
-  w3m "https://en.m.wikipedia.org/wiki/${*/\ /_}"
-}

@@ -2,8 +2,8 @@
 
 Linux configuration files.
 
-## Installation
+## Install
 
-    $ ./install
+    ./install
 
 Note that this will overwrite existing files.
