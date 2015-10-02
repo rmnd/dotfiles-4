@@ -12,7 +12,7 @@ stty -ixon
 
 # ENV
 
-export PS1="\w \$ "
+export PS1="[\w]> "
 export HISTSIZE=1000
 export HISTFILESIZE=10000
 export TERMINAL="urxvt"
