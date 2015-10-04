@@ -24,9 +24,11 @@ export BROWSER="firefox-developer"
 alias ls="ls --color=auto"
 alias la="ls -A"
 alias grep="grep --color=auto"
-alias pacman="sudo pacman --color=always"
 alias reload=". ~/.bashrc"
 alias reset="reset && reload"
+alias pacman="sudo pacman --color=always"
+alias vi="vim"
+alias emacs="emacs -nw"
 
 # FUNCTIONS
 

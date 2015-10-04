@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# teknik upload
+# teknik.io upload
 
 if [[ $# -eq 0 ]]; then
   echo "Usage: upload [file ..]"

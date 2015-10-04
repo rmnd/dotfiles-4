@@ -1,8 +1,9 @@
 #!/bin/bash
 #
-# Markdown wrapper for CSS and recursive compilation
+# Markdown wrapper for CSS
 
 CSS=~/.markdown.css
+MARKDOWN="markdown --html4tags"
 
 html() {
   cat << EOF
@@ -14,62 +15,39 @@ html() {
 ${style}
 </head>
 <body>
-$(markdown --html4tags "$@")
+$($MARKDOWN "$@")
 </body>
 </html>
 EOF
 }
 
 help='false'
-clean='false'
 embed='false'
-recursive='false'
+files=
 
 for arg; do
   case "${arg}" in
-    -c|--clean) clean='true' ;;
     -e|--embed) embed='true' ;;
-    -r|--recursive) recursive='true' ;;
     -h|--help) help='true' ;;
-    *) files="${files} ${arg}"
+    *) files="${files} ${arg}" ;;
   esac
 done
 
-if [[ "${help}" = 'true' ]] ||
-   [[ "${recursive}" = 'false' && -z "${files}" ]]; then
-  cat << EOF
-usage: buildown [option ..] [file ..]
-
-  -c, --clean            remove compiled files, *.md.html
-  -e, --embed            embed CSS in <style>, instead of using <link>
-  -r, --recursive        recursively search for Markdown files
-
-EOF
+if [[ "$help" = 'true' ]]; then
+  echo 'usage: buildown [-e|--embed] <file ..>'
   exit 1
 fi
 
-if [[ "${recursive}" = 'true' ]]; then
-  files="$(find -type f | grep -e '/*\.md$')"
+if [[ ! -f "$CSS" ]]; then
+  echo "warning: $CSS doesn't exist"
 fi
 
-if [[ ! -f "${CSS}" ]]; then
-  echo "warning: ${CSS} doesn't exist"
-fi
-
-if [[ "${embed}" = 'true' ]]; then
-  style='<style>'"$(cat "${CSS}")"'</style>'
+if [[ "$embed" = 'true' ]]; then
+  style='<style>'"$(cat "$CSS")"'</style>'
 else
-  style='<link rel="stylesheet" href="'"${CSS}"'">'
+  style='<link rel="stylesheet" href="'"$CSS"'">'
 fi
 
 for file in ${files}; do
-  target="${file}.html"
-
-  if [[ "${clean}" = 'false' ]]; then
-    echo -e "\033[32;40mbuilding ${target}\033[0m"
-    html "${file}" > "${target}"
-  elif [[ -f "${target}" ]]; then
-    echo -e "\033[31;40mremoving ${target}\033[0m"
-    rm "${target}"
-  fi
+  html "${file}" > "${file}.html"
 done

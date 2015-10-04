@@ -1,12 +1,8 @@
 #!/bin/bash
 #
-# Simple todo script
+# A simple todo script
 
 TODO=~/.todo
-
-if [[ ! -f "$TODO" ]]; then
-  echo "# ~/.todo" > "$TODO"
-fi
 
 if [[ $# -eq 0 ]]; then
   "$EDITOR" "$TODO"

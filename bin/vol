@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Change system audio volume
+# Change volume settings
 
 DEVICE=1
 

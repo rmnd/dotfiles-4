@@ -6,16 +6,14 @@ FIFO="/tmp/panel-fifo"
 
 HEIGHT=40
 LINE_HEIGHT=13
-
 FONT="Roboto:size=10"
-
 COLOR_FG="#ffebdbb2"
 COLOR_BG="#ff252525"
 COLOR_ACTIVE="#ff4c4c4c"
 COLOR_INACTIVE="#ff353535"
 
-WORKSPACE_SPACING="  "
-WORKSPACE_BLOCK="              "
+SPACING="  "
+BLOCK="              "
 
 panel_bar() {
   while read -r line; do
@@ -35,9 +33,9 @@ panel_bar() {
           name="${item#?}"
           case "$item" in
             # active desktop
-            [OFU]*) wm_infos="$wm_infos$WORKSPACE_SPACING%{U$COLOR_ACTIVE}%{+u}"$WORKSPACE_BLOCK"%{-u}" ;;
+            [OFU]*) wm_infos="$wm_infos$SPACING%{U$COLOR_ACTIVE}%{+u}"$BLOCK"%{-u}" ;;
             # inactive desktop
-            [ofu]*) wm_infos="$wm_infos$WORKSPACE_SPACING%{U$COLOR_INACTIVE}%{+u}"$WORKSPACE_BLOCK"%{-u}" ;;
+            [ofu]*) wm_infos="$wm_infos$SPACING%{U$COLOR_INACTIVE}%{+u}"$BLOCK"%{-u}" ;;
           esac
           shift
         done
