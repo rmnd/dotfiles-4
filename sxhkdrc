@@ -150,7 +150,7 @@ shift + Print
 
 # ssbm
 super + m
-  melee
+  ssbm
 
 # Reload sxhkd
 super + Escape
