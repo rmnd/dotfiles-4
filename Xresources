@@ -4,12 +4,12 @@
 
 #include "/home/carl/.colors/gruvbox"
 
-URxvt.internalBorder: 16
+URxvt.internalBorder: 18
 URxvt.cursorBlink: true
 URxvt.scrollBar: false
 
 URxvt.perl-ext-common: default,matcher
-URxvt.url-launcher: /bin/firefox-developer
+URxvt.url-launcher: /bin/chromium
 URxvt.matcher.button: 1
 
 URxvt.font: xft:Roboto Mono:size=9

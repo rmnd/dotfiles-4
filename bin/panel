@@ -4,7 +4,7 @@
 
 FIFO="/tmp/panel-fifo"
 
-HEIGHT=40
+HEIGHT=41
 LINE_HEIGHT=13
 FONT="Roboto:size=10"
 COLOR_FG="#ffebdbb2"
@@ -12,8 +12,8 @@ COLOR_BG="#ff252525"
 COLOR_ACTIVE="#ff4c4c4c"
 COLOR_INACTIVE="#ff353535"
 
-SPACING="  "
-BLOCK="              "
+SPACING="   "
+BLOCK="               "
 
 panel_bar() {
   while read -r line; do
@@ -21,7 +21,7 @@ panel_bar() {
       # xtitle
       T*)
         line=${line#?}
-        title="%{F$COLOR_FG}  ${line/$USER@$HOSTNAME:/$TERMINAL: }"
+        title="%{F$COLOR_FG}  ${line/${USER}@${HOSTNAME}:/${TERMINAL}: }"
         ;;
       # bspwm
       W*)
@@ -33,9 +33,9 @@ panel_bar() {
           name="${item#?}"
           case "$item" in
             # active desktop
-            [OFU]*) wm_infos="$wm_infos$SPACING%{U$COLOR_ACTIVE}%{+u}"$BLOCK"%{-u}" ;;
+            [OFU]*) wm_infos="${wm_infos}${SPACING}%{U$COLOR_ACTIVE}%{+u}${BLOCK}%{-u}" ;;
             # inactive desktop
-            [ofu]*) wm_infos="$wm_infos$SPACING%{U$COLOR_INACTIVE}%{+u}"$BLOCK"%{-u}" ;;
+            [ofu]*) wm_infos="${wm_infos}${SPACING}%{U$COLOR_INACTIVE}%{+u}${BLOCK}%{-u}" ;;
           esac
           shift
         done
