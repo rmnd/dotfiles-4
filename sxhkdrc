@@ -152,6 +152,14 @@ shift + Print
 super + m
   ssbm
 
+# Kill panel
+super + shift + o
+  pkill panel; bspc config top_padding 0
+
+# Reload bspwm
+super + shift + p
+  ~/.bspwmrc
+
 # Reload sxhkd
 super + Escape
   pkill -USR1 -x sxhkd
