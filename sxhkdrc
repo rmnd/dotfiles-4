@@ -124,6 +124,10 @@ shift + XF86MonBrightnessDown
 XF86Sleep
   systemctl suspend
 
+# Reboot
+ctrl + alt + Delete
+  reboot
+
 #
 # Misc
 #
