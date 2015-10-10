@@ -8,6 +8,11 @@
 
 " Tab width
 set tabstop=2
+
+" Tab width when editing
+set softtabstop=2
+
+" Tab width when indenting in normal mode
 set shiftwidth=2
 
 " Emit spaces instead of tabs
@@ -26,15 +31,11 @@ set ignorecase
 " UI
 "
 
-" Line numbers
+" Show line numbers
 set number
 
 " Show cursor position
 set ruler
-
-" Show whitespace characters
-"set list
-"set listchars=space:·,tab:··,eol:¬
 
 " Show current command
 set showcmd
@@ -58,8 +59,10 @@ set statusline=%<\ %f\ %h%m%r%=%-14.(%l,%c%V%)\ %P\
 " COLOR
 "
 
+" Enable syntax highlighting
 syntax on
 set background=dark
+
 colorscheme gruvbox
 
 "
@@ -69,6 +72,9 @@ colorscheme gruvbox
 " Leader key
 let mapleader=' '
 nnoremap <space> <nop>
+
+" Escape key replacement in insert mode
+inoremap jk <esc>
 
 " Treat overflowing lines as having line breaks
 map j gj
@@ -114,4 +120,3 @@ let g:syntastic_check_on_wq=0
 
 let g:syntastic_c_compiler_options='-std=c11 -Wall'
 let g:syntastic_cpp_compiler_options='-std=c++11 -Wall'
-let g:syntastic_html_tidy_exec = 'tidy5'
