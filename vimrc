@@ -37,6 +37,12 @@ set number
 " Show cursor position
 set ruler
 
+" Show colored column
+set colorcolumn=80
+
+" Highlight current line
+set cursorline
+
 " Show current command
 set showcmd
 

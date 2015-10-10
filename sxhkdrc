@@ -44,17 +44,17 @@ super + apostrophe
 
 # Resize window
 super + alt + {h,j,k,l}
-  bspc window -e {left -50,down +50,up -50,right +50}
+ bspc window -e {left -120,down +120,up -120,right +120}
 super + alt + shift + {h,j,k,l}
-  bspc window -e {right -50,up +50,down -50,left +50}
+  bspc window -e {right -120,up +120,down -120,left +120}
 
 # Move floating window
 super + {Left,Right,Up,Down}
-  xdo move {-x -50,-x +50,-y -50,-y +50}
+  xdo move {-x -120,-x +120,-y -120,-y +120}
 
 # Resize floating window
 super + alt + {Left,Right,Up,Down}
-  xdo resize {-w -50,-w +50,-h -50,-h +50}
+  xdo resize {-w -120,-w +120,-h -120,-h +120}
 
 # Move window to desktop
 super + {_,shift + }{1-9,0}
@@ -150,7 +150,7 @@ Print
 
 # Uploaded screenshot
 shift + Print
-  "$BROWSER" "$(scrot -e 'upload $f && mv $f ~/pic/scrots')"
+  "$BROWSER" "$(scrot -e 'teknik $f && mv $f ~/pic/scrots')"
 
 # ssbm
 super + m
