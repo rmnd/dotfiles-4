@@ -7,7 +7,7 @@ FIFO="/tmp/panel-fifo"
 HEIGHT=41
 LINE_HEIGHT=13
 FONT="Roboto:size=10"
-COLOR_FG="#ffebdbb2"
+COLOR_FG="#ffffd7af"
 COLOR_BG="#ff252525"
 COLOR_ACTIVE="#ff514f4c"
 COLOR_INACTIVE="#ff353535"
