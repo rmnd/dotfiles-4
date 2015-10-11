@@ -55,15 +55,8 @@ set showmatch
 " Highlight search matches
 set hlsearch
 
-"
-" STATUS LINE
-"
-
 " Always show status line
 set laststatus=2
-
-" Emulate the default status line
-set statusline=%<\ %f\ %h%m%r%=%-14.(%l,%c%V%)\ %P\ 
 
 "
 " COLOR

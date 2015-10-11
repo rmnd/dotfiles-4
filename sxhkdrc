@@ -44,7 +44,7 @@ super + apostrophe
 
 # Resize window
 super + alt + {h,j,k,l}
- bspc window -e {left -120,down +120,up -120,right +120}
+  bspc window -e {left -120,down +120,up -120,right +120}
 super + alt + shift + {h,j,k,l}
   bspc window -e {right -120,up +120,down -120,left +120}
 
