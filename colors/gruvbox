@@ -1,5 +1,7 @@
+! gruvbox
+
 *background:   #262626
-*foreground:   #ebdbb2
+*foreground:   #ffd7af
 
 ! black + darkgrey
 *color0:       #262626

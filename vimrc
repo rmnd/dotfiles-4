@@ -6,6 +6,9 @@
 " GENERAL
 "
 
+" Disable vi compatibility
+set nocompatible
+
 " Tab width
 set tabstop=2
 
@@ -59,6 +62,7 @@ set hlsearch
 " Always show status line
 set laststatus=2
 
+" Emulate the default status line
 set statusline=%<\ %f\ %h%m%r%=%-14.(%l,%c%V%)\ %P\ 
 
 "
