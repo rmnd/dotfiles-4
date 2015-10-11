@@ -17,7 +17,7 @@ export HISTSIZE=1000
 export HISTFILESIZE=10000
 export TERMINAL="urxvt"
 export EDITOR="vim"
-export BROWSER="icecat"
+export BROWSER="firefox"
 
 # ALIASES
 
