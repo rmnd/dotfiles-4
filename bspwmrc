@@ -18,7 +18,7 @@ bspc config normal_border_color "#302f2b"
 bspc config active_border_color "#817267"
 bspc config presel_border_color "#c0b18b"
 
-bspc monitor -d 1 2 3
+bspc monitor -d 1 2 3 4
 
 bspc rule -a urxvt-launcher floating=on
 

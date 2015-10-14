@@ -12,8 +12,7 @@ COLOR_BG="#ff252525"
 COLOR_ACTIVE="#ff534f4c"
 COLOR_INACTIVE="#ff353535"
 
-SPACING="   "
-BLOCK="               "
+BLOCK="                "
 
 panel_bar() {
   while read -r line; do
@@ -33,9 +32,9 @@ panel_bar() {
           name="${item#?}"
           case "$item" in
             # active desktop
-            [OFU]*) wm_infos="${wm_infos}${SPACING}%{U$COLOR_ACTIVE}%{+u}${BLOCK}%{-u}" ;;
+            [OFU]*) wm_infos=" ${wm_infos}%{U$COLOR_ACTIVE}%{+u}${BLOCK}%{-u}   " ;;
             # inactive desktop
-            [ofu]*) wm_infos="${wm_infos}${SPACING}%{U$COLOR_INACTIVE}%{+u}${BLOCK}%{-u}" ;;
+            [ofu]*) wm_infos=" ${wm_infos}%{U$COLOR_INACTIVE}%{+u}${BLOCK}%{-u}   " ;;
           esac
           shift
         done
