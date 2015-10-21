@@ -17,4 +17,4 @@ Note that this will overwrite existing files.
 
 ## Screenshot
 
-![screenshot](https://i.imgur.com/D4w1Lsb.png)
+![screenshot](http://i.imgur.com/5YSOWtO.png)
