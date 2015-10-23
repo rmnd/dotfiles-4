@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Markdown wrapper for CSS
+# Markdown wrapper for CSS.
 
 CSS=~/.markdown.css
 MARKDOWN="markdown --html4tags"
@@ -49,5 +49,5 @@ else
 fi
 
 for file in ${files}; do
-  html "${file}" > "${file}.html"
+  html "${file}"
 done

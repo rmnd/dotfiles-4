@@ -11,6 +11,6 @@ for file in ${ignore}; do
 done
 
 for file in ${files}; do
-  echo -e "\033[40;32mSymlinking ${file}\033[0m"
+  echo -e "\E[40;32m${dir}/${file} -> ${HOME}/.${file}\E[0m"
   ln -snf "${dir}/${file}" "${HOME}/.${file}"
 done

@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# HTML file template
+# HTML file template.
 
 cat << EOF
 <!DOCTYPE html>

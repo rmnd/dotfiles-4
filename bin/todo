@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# A simple todo script
+# A simple todo script.
 
 TODO=~/.todo
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Panel using lemonbar
+# Panel using lemonbar.
 
 FIFO="/tmp/panel-fifo"
 
@@ -9,7 +9,7 @@ LINE_HEIGHT=13
 FONT="Roboto:size=10"
 COLOR_FG="#ffffd7af"
 COLOR_BG="#ff252525"
-COLOR_ACTIVE="#ff534f4c"
+COLOR_ACTIVE="#ff544f4c"
 COLOR_INACTIVE="#ff353535"
 
 BLOCK="                "

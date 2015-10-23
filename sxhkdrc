@@ -6,9 +6,13 @@
 # bspwm
 #
 
-# Kill wm
+# Kill bswm
 super + alt + Escape
-  bspc quit; pkill panel; pkill redshift
+  pkill panel; pkill redshift; bspc quit
+
+# Reload bswm
+super + shift + b
+  pkill panel; ~/.bspwmrc
 
 # Close window
 super + w
@@ -60,15 +64,15 @@ super + alt + {Left,Right,Up,Down}
 super + {_,shift + }{1-9,0}
   bspc {desktop -f,window -d} ^{1-9,10}
 
-# Move window into presel
+# Move window into preselection
 super + y
   bspc window -w last.manual
 
-# Presel window splitting
+# Preselect window splitting
 super + ctrl + {h,j,k,l}
   bspc window -p {left,down,up,right}
 
-# Reset presel
+# Reset preselection
 super + ctrl + {_,shift + }space
   bspc {window -p cancel,desktop -c}
 
@@ -104,33 +108,13 @@ XF86AudioLowerVolume
 XF86AudioMute
   vol toggle
 
-# Increase brightness
-XF86MonBrightnessUp
-  xbacklight +5
-
-# Decrease brightness
-XF86MonBrightnessDown
-  xbacklight -5
-
-# Max brightness
-shift + XF86MonBrightnessUp
-  xbacklight =100
-
-# Min brightness
-shift + XF86MonBrightnessDown
-  xbacklight =0
-
-# Suspend
-XF86Sleep
-  systemctl suspend
-
 #
 # Misc
 #
 
 # Terminal
 super + Return
-  "$TERMINAL"
+  $TERMINAL
 
 # Launcher
 super + space
@@ -138,7 +122,7 @@ super + space
 
 # Browser
 super + x
-  "$BROWSER"
+  $BROWSER
 
 # Screenshot
 Print
@@ -146,19 +130,11 @@ Print
 
 # Uploaded screenshot
 shift + Print
-  "$BROWSER" "$(scrot -e 'teknik $f && mv $f ~/pic/scrots')"
-
-# ssbm
-super + m
-  ssbm
+  $BROWSER "$(scrot -e 'teknik $f && mv $f ~/pic/scrots')"
 
 # Kill panel
 super + shift + n
   pkill panel; bspc config top_padding 0
-
-# Reload bspwm
-super + shift + b
-  pkill panel; ~/.bspwmrc
 
 # Reload sxhkd
 super + shift + s

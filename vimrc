@@ -6,63 +6,63 @@
 " GENERAL
 "
 
-" Disable vi compatibility
+" Disable vi compatibility.
 set nocompatible
 
-" Tab width
+" Tab width.
 set tabstop=2
 
-" Tab width when editing
+" Tab width when editing.
 set softtabstop=2
 
-" Tab width when indenting in normal mode
+" Tab width when indenting in normal mode.
 set shiftwidth=2
 
-" Emit spaces instead of tabs
+" Emit spaces instead of tabs.
 set expandtab
 
-" Automatically indent on newline
+" Automatically indent on newline.
 set autoindent
 
-" Command history
+" Command history.
 set history=1000
 
-" Ignore character case when searching
+" Ignore character case when searching.
 set ignorecase
 
 "
 " UI
 "
 
-" Show line numbers
+" Show line numbers.
 set number
 
-" Show cursor position
+" Show cursor position.
 set ruler
 
-" Show colored column
+" Show colored column.
 set colorcolumn=80
 
-" Highlight current line
+" Highlight current line.
 set cursorline
 
-" Show current command
+" Show current command.
 set showcmd
 
-" Show matching brackets
+" Show matching brackets.
 set showmatch
 
-" Highlight search matches
+" Highlight search matches.
 set hlsearch
 
-" Always show status line
+" Always show status line.
 set laststatus=2
 
 "
 " COLOR
 "
 
-" Enable syntax highlighting
+" Enable syntax highlighting.
 syntax on
 set background=dark
 
@@ -72,38 +72,38 @@ colorscheme gruvbox
 " INPUT
 "
 
-" Leader key
+" Leader key.
 let mapleader=' '
 nnoremap <space> <nop>
 
-" Escape key replacement in insert mode
+" Escape key replacement in insert mode.
 inoremap jk <esc>
 
-" Treat overflowing lines as having line breaks
+" Treat overflowing lines as having line breaks.
 map j gj
 map k gk
 
-" Simplify saving files
+" Simplify saving files.
 map <C-s> :w<CR>
 
-" Disable search match highlighting
+" Disable search match highlighting.
 map <leader>h :nohlsearch<CR>
 
-" Enable full mouse usage
+" Enable full mouse usage.
 set mouse=a
 
 "
 " FILE
 "
 
-" Disable swapfiles
+" Disable swapfiles.
 set noswapfile
 
-" Enable backup
+" Enable backup.
 set backup
 set backupdir=~/.vim/backup
 
-" Reload vimrc on file save
+" Reload vimrc on file save.
 autocmd! BufWritePost .vimrc source $MYVIMRC
 
 "
