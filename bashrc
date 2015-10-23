@@ -4,10 +4,10 @@
 
 # GENERAL
 
-# If not running interactively, don't do anything
+# If not running interactively, don't do anything.
 [[ $- != *i* ]] && return
 
-# Prevent CTRL-S from freezing the terminal
+# Prevent CTRL-S from freezing the terminal.
 stty -ixon
 
 # ENV
@@ -17,7 +17,7 @@ export HISTSIZE=1000
 export HISTFILESIZE=10000
 export TERMINAL="urxvt"
 export EDITOR="vim"
-export BROWSER="chromium"
+export BROWSER="icecat"
 
 # ALIASES
 
@@ -28,7 +28,6 @@ alias reload=". ~/.bashrc"
 alias reset="reset && reload"
 alias pacman="sudo pacman --color=always"
 alias vi="vim"
-alias emacs="emacs -nw"
 
 # FUNCTIONS
 
