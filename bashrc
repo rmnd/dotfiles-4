@@ -28,9 +28,3 @@ alias reload=". ~/.bashrc"
 alias reset="reset && reload"
 alias pacman="sudo pacman --color=always"
 alias vi="vim"
-
-# FUNCTIONS
-
-mkcd() {
-  mkdir -p "$@" && cd "$@"
-}

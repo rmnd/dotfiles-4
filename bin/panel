@@ -6,7 +6,7 @@ FIFO="/tmp/panel-fifo"
 
 HEIGHT=41
 LINE_HEIGHT=13
-FONT="Roboto:size=10"
+FONT="Roboto:size=11"
 COLOR_FG="#ffffd7af"
 COLOR_BG="#ff252525"
 COLOR_ACTIVE="#ff544f4c"
