@@ -1,0 +1,84 @@
+#!/bin/bash
+#
+# File templates.
+
+bash() {
+  cat << EOF
+#!/bin/bash
+EOF
+}
+
+c() {
+  cat << EOF
+int main(void) {
+  return 0;
+}
+EOF
+}
+
+cc() {
+  cat << EOF
+int main() {
+  return 0;
+}
+EOF
+}
+
+css() {
+  cat << EOF
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+EOF
+}
+
+h() {
+  cat << EOF
+#ifndef ${@}
+#define ${@}
+
+#endif // ${@}
+EOF
+}
+
+html() {
+  cat << EOF
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <title>${@}</title>
+  </head>
+  <body>
+  </body>
+</html>
+EOF
+}
+
+java() {
+  cat << EOF
+public class ${@} {
+}
+EOF
+}
+
+if [[ $# -eq 0 ]]; then
+  cat << EOF
+usage: template <name> [args]
+
+templates:
+ - bash
+ - c
+ - cc
+ - css
+ - h [header name]
+ - html [page title]
+ - java [class name]
+EOF
+  exit 1
+fi
+
+"$1" "${@:2}"
