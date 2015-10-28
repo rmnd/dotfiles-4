@@ -1,0 +1,4 @@
+#!/bin/bash
+
+ip=$(curl -s "api.ipify.org?format=${@}")
+echo $ip
