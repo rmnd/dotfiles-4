@@ -36,7 +36,6 @@ EOF
 
 editorconfig() {
   cat << EOF
-* {
 [*]
 end_of_line = fl
 insert_final_newline = true
@@ -45,7 +44,6 @@ indent_size = 2
 
 [Makefile]
 indent_style = tab
-}
 EOF
 }
 
@@ -100,7 +98,7 @@ if [[ $# -eq 0 ]]; then
   cat << EOF
 usage: template <name> [args]
 
-templates:
+names:
  - bash
  - c
  - cc
