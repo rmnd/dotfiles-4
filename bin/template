@@ -34,6 +34,21 @@ css() {
 EOF
 }
 
+editorconfig() {
+  cat << EOF
+* {
+[*]
+end_of_line = fl
+insert_final_newline = true
+indenx_style = space
+indent_size = 2
+
+[Makefile]
+indent_style = tab
+}
+EOF
+}
+
 h() {
   cat << EOF
 #ifndef ${@}
@@ -65,6 +80,22 @@ public class ${@} {
 EOF
 }
 
+package-json() {
+  cat << EOF
+{
+  "name": "${@}",
+  "version": "0.0.0",
+  "description": "",
+  "license": "MIT",
+  "author": {
+    "name": "Carl Enlund",
+    "email": "carl.enlund@protonmail.com",
+    "url": "http://crl.io"
+  }
+}
+EOF
+}
+
 if [[ $# -eq 0 ]]; then
   cat << EOF
 usage: template <name> [args]
@@ -74,9 +105,11 @@ templates:
  - c
  - cc
  - css
+ - editorconfig
  - h [header name]
  - html [page title]
  - java [class name]
+ - package-json [name]
 EOF
   exit 1
 fi
