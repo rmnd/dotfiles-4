@@ -18,6 +18,7 @@ export HISTFILESIZE=10000
 export TERMINAL="urxvt"
 export EDITOR="vim"
 export BROWSER="icecat"
+export AUR_HELPER="apacman"
 
 # ALIASES
 

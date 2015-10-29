@@ -1,0 +1,19 @@
+#!/bin/bash
+#
+# Install dependencies from the AUR.
+
+PKGV=(
+  # WM
+  bspwm-git
+  lemonbar-xft-git
+  sutils-git
+  sxhkd-git
+  xorg
+  xorg-xinit
+
+  # Font families
+  ttf-roboto
+  ttf-roboto-mono
+)
+
+$AUR_HELPER --sync --noconfirm ${PKGV[@]}

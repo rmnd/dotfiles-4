@@ -1,4 +1,6 @@
 #!/bin/bash
+#
+# Get your public IP address.
 
 ip=$(curl -s "api.ipify.org?format=${@}")
 echo $ip
