@@ -4,12 +4,12 @@ Linux configuration files.
 
 ## Install
 
-__Clone__:
+__Clone:__
 
     git clone https://github.com/carlenlund/dotfiles
     cd dotfiles
 
-__Symlink__:
+__Symlink:__
 
     ./install
 
