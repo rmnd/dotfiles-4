@@ -5,7 +5,7 @@
 CSS=~/.markdown.css
 MARKDOWN="markdown --html4tags"
 
-html() {
+md() {
   cat << EOF
 <!DOCTYPE html>
 <html>
@@ -21,33 +21,43 @@ $($MARKDOWN "$@")
 EOF
 }
 
-help='false'
 embed='false'
+browser='false'
+help='false'
 files=
 
 for arg; do
   case "${arg}" in
     -e|--embed) embed='true' ;;
+    -b|--browser) browser='true' ;;
     -h|--help) help='true' ;;
     *) files="${files} ${arg}" ;;
   esac
 done
 
-if [[ "$help" = 'true' ]]; then
-  echo 'usage: buildown [-e|--embed] <file ..>'
+if [[ "$help" = 'true' ]] || [[ $# -eq 0 ]]; then
+  echo 'usage: buildown [-e|--embed] [-b|--browser] <file ..>'
   exit 1
 fi
 
-if [[ ! -f "$CSS" ]]; then
-  echo "warning: $CSS doesn't exist"
+if [[ ! -f "${CSS}" ]]; then
+  echo "warning: ${CSS} doesn't exist"
 fi
 
 if [[ "$embed" = 'true' ]]; then
-  style='<style>'"$(cat "$CSS")"'</style>'
+  style='<style>'"$(cat "${CSS}")"'</style>'
 else
-  style='<link rel="stylesheet" href="'"$CSS"'">'
+  style='<link rel="stylesheet" href="'"${CSS}"'">'
 fi
 
 for file in ${files}; do
-  html "${file}"
+  html="$(md "${file}")"
+
+  if [[ "$browser" = 'true' ]]; then
+    out="${file}.html"
+    echo "${html}" > "${out}"
+    $BROWSER "${out}" && rm "${out}"
+  else
+    echo "${html}"
+  fi
 done

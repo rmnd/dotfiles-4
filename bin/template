@@ -107,9 +107,9 @@ names:
  - h [header name]
  - html [page title]
  - java [class name]
- - package-json [name]
+ - package.json [name]
 EOF
   exit 1
 fi
 
-"$1" "${@:2}"
+"${1/./-}" "${@:2}"
