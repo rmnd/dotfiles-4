@@ -4,7 +4,7 @@
 
 dir="$(cd "$(dirname "$0")" && pwd)"
 files="$(cd "${dir}" && echo *)"
-ignore="README.md install deps"
+ignore=(README.md install)
 
 for file in ${ignore}; do
   files="${files/$file}"
