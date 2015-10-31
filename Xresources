@@ -9,7 +9,7 @@
 *scrollBar: false
 
 *perl-ext-common: default,matcher
-*url-launcher: icecat
+*url-launcher: $BROWSER
 *matcher.button: 1
 
 *font: xft:Roboto Mono:size=10

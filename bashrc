@@ -17,7 +17,7 @@ export HISTSIZE=1000
 export HISTFILESIZE=10000
 export TERMINAL="urxvt"
 export EDITOR="vim"
-export BROWSER="icecat"
+export BROWSER="firefox"
 
 # ALIASES
 
@@ -27,7 +27,6 @@ alias grep="grep --color=auto"
 alias reload=". ~/.bashrc"
 alias reset="reset && reload"
 alias pacman="sudo pacman --color=always"
-alias vi="vim"
 
 # FUNCTIONS
 
