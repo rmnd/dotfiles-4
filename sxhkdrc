@@ -16,7 +16,7 @@ super + shift + b
 
 # Close window
 super + w
-  bspc window -k
+  bspc window -c
 
 # Toggle monocle
 super + t
