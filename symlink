@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# dotfiles installer
+# symlink dotfiles
 
 dir="$(cd "$(dirname "$0")" && pwd)"
 files="$(cd "${dir}" && echo *)"

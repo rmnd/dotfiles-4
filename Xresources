@@ -9,7 +9,7 @@
 *scrollBar: false
 
 *perl-ext-common: default,matcher
-*url-launcher: $BROWSER
+*url-launcher: /bin/firefox
 *matcher.button: 1
 
 *font: xft:Roboto Mono:size=10
