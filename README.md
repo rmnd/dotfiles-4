@@ -14,7 +14,3 @@ __Symlink:__
     ./symlink
 
 Note that this will overwrite existing files.
-
-## Screenshot
-
-![screenshot](http://i.imgur.com/5YSOWtO.png)
