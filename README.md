@@ -11,7 +11,7 @@ __Clone:__
 
 __Symlink:__
 
-    ./install
+    ./symlink
 
 Note that this will overwrite existing files.
 
