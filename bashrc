@@ -7,7 +7,7 @@
 # If not running interactively, don't do anything.
 [[ $- != *i* ]] && return
 
-# Prevent CTRL-S from freezing the terminal.
+# Prevent CTRL-S from freezing the shell.
 stty -ixon
 
 # ENV
