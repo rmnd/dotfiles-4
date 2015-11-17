@@ -1,5 +1,3 @@
-! ~/.Xresources
-
 #include "/home/carl/.colors/gruvbox"
 
 URxvt.internalBorder: 18

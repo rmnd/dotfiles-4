@@ -1,10 +1,4 @@
-"
-" ~/.vimrc
-"
-
-"
-" General
-"
+"" General
 
 " Disable vi compatibility.
 set nocompatible
@@ -30,9 +24,7 @@ set history=1000
 " Ignore character case when searching.
 set ignorecase
 
-"
-" UI
-"
+"" UI
 
 " Show line numbers.
 set number
@@ -57,22 +49,16 @@ set hlsearch
 " Always show status line.
 set laststatus=2
 
-"
-" Color
-"
+"" Color
 
 " Enable syntax highlighting.
 syntax on
 
-" Use dark colorscheme settings.
 set background=dark
 
-" Set color scheme.
 colorscheme gruvbox
 
-"
-" Input
-"
+"" Input
 
 " Set leader key.
 let mapleader=' '
@@ -94,9 +80,7 @@ map <leader>h :nohlsearch<CR>
 "Enable mouse usage.
 set mouse=a
 
-"
-" File
-"
+"" File
 
 " Disable swapfiles.
 set noswapfile
@@ -105,9 +89,7 @@ set noswapfile
 set backup
 set backupdir=~/.vim/backup
 
-"
-" Plugin
-"
+"" Plugin
 
 " Syntastic
 

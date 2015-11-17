@@ -1,7 +1,3 @@
-#
-# ~/.sxhkdrc
-#
-
 # Close the selected window.
 super + w
   bspc window -c

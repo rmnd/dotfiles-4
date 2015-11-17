@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Markdown and CSS
+# Wrapper for Markdown and CSS.
 
 css=~/.markdown.css
 markdown="markdown --html4tags"

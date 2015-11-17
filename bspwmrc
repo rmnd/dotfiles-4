@@ -1,7 +1,4 @@
 #!/bin/sh
-#
-# ~/.bspwmrc
-#
 
 bspc config window_gap 45
 bspc config border_width 6

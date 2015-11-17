@@ -1,10 +1,7 @@
-#
-# ~/.bashrc
-#
-
 # If not running interactively, don't do anything.
 [[ $- != *i* ]] && return
 
+# Prevent Ctrl-S from freezing the terminal.
 stty -ixon
 
 export PS1="\w $ "
