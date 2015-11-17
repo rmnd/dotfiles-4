@@ -1,17 +1,12 @@
-!
 ! ~/.Xresources
-!
 
 #include "/home/carl/.colors/gruvbox"
 
-*internalBorder: 18
-*cursorBlink: true
-*scrollBar: false
-
-*perl-ext-common: default,matcher
-*url-launcher: /bin/firefox
-*matcher.button: 1
-
-*font: xft:Roboto Mono:size=10
-
+URxvt.internalBorder: 18
+URxvt.cursorBlink: true
+URxvt.scrollBar: false
+URxvt.perl-ext-common: default,matcher
+URxvt.url-launcher: /bin/firefox
+URxvt.matcher.button: 1
+URxvt.font: xft:Roboto Mono:size=10
 Xcursor.size: 32

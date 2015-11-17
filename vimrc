@@ -3,7 +3,7 @@
 "
 
 "
-" GENERAL
+" General
 "
 
 " Disable vi compatibility.
@@ -36,7 +36,6 @@ set ignorecase
 
 " Show line numbers.
 set number
-
 " Show cursor position.
 set ruler
 
@@ -59,20 +58,23 @@ set hlsearch
 set laststatus=2
 
 "
-" COLOR
+" Color
 "
 
 " Enable syntax highlighting.
 syntax on
+
+" Use dark colorscheme settings.
 set background=dark
 
+" Set color scheme.
 colorscheme gruvbox
 
 "
-" INPUT
+" Input
 "
 
-" Leader key.
+" Set leader key.
 let mapleader=' '
 nnoremap <space> <nop>
 
@@ -89,11 +91,11 @@ map <C-s> :w<CR>
 " Disable search match highlighting.
 map <leader>h :nohlsearch<CR>
 
-" Enable full mouse usage.
+"Enable mouse usage.
 set mouse=a
 
 "
-" FILE
+" File
 "
 
 " Disable swapfiles.
@@ -103,11 +105,8 @@ set noswapfile
 set backup
 set backupdir=~/.vim/backup
 
-" Reload vimrc on file save.
-autocmd! BufWritePost .vimrc source $MYVIMRC
-
 "
-" PLUGIN
+" Plugin
 "
 
 " Syntastic

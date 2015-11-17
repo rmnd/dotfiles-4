@@ -2,6 +2,8 @@
 #
 # Panel using lemonbar.
 
+# TODO: Cleanup.
+
 FIFO="/tmp/panel-fifo"
 
 HEIGHT=41
@@ -17,12 +19,10 @@ BLOCK="                "
 panel_bar() {
   while read -r line; do
     case $line in
-      # xtitle
       T*)
         line=${line#?}
-        title="%{F$COLOR_FG}  ${line/${USER}@${HOSTNAME}:/${TERMINAL}: }"
+        title="%{F$COLOR_FG}  ${line}"
         ;;
-      # bspwm
       W*)
         wm_infos=""
         IFS=":"
@@ -31,16 +31,13 @@ panel_bar() {
           item="$1"
           name="${item#?}"
           case "$item" in
-            # active desktop
             [OFU]*) wm_infos=" ${wm_infos}%{U$COLOR_ACTIVE}%{+u}${BLOCK}%{-u}   " ;;
-            # inactive desktop
             [ofu]*) wm_infos=" ${wm_infos}%{U$COLOR_INACTIVE}%{+u}${BLOCK}%{-u}   " ;;
           esac
           shift
         done
         wm_infos="$wm_infos "
         ;;
-      # clock
       C*)
         line=${line#?}
         sys_infos="%{F$COLOR_FG}${line,,}  "

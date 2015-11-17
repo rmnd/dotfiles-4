@@ -2,115 +2,91 @@
 # ~/.sxhkdrc
 #
 
-#
-# bspwm
-#
-
-# Kill bswm
-super + alt + Escape
-  pkill panel; pkill redshift; bspc quit
-
-# Reload bswm
-super + shift + b
-  pkill panel; ~/.bspwmrc
-
-# Close window
+# Close the selected window.
 super + w
   bspc window -c
 
-# Toggle monocle
-super + t
-  bspc desktop -l next
-
-# Balance tree
+# Make all windows occupy the same area.
 super + b
   bspc desktop -B
 
-# Rotate tree
+# Cycle the layout of the selected desktop.
+super + t
+  bspc desktop -l next
+
+# Rotate the tree of the selected desktop.
 super + {u,i,o}
   bspc desktop -R {180,270,90}
 
-# Toggle window tiling
+# Set the state for the selected window.
 super + {s,p,f}
   bspc window -t {floating,pseudo_tiled,fullscreen}
 
-# Focus or move window
-super + {_,shift + }{h,j,k,l}
-  bspc window -{f,s} {left,down,up,right}
+# Focus the given window.
+super + {h,j,k,l}
+  bspc window -f {left,down,up,right}
 
-# Focus next or previous window
+# Swap the selected window with the given window.
+super + shift + {h,j,k,l}
+  bspc window -s {left,down,up,right}
+
+# Focus the next or previous window.
 super + {_,shift + }c
   bspc window -f {next,prev}
 
-# Focus last window
-super + apostrophe
-  bspc window -f last
-
-# Resize window
+# Resize the selected window.
 super + alt + {h,j,k,l}
   bspc window -e {left -120,down +120,up -120,right +120}
 super + alt + shift + {h,j,k,l}
   bspc window -e {right -120,up +120,down -120,left +120}
 
-# Move floating window
+# Move the selected floating window.
 super + {Left,Right,Up,Down}
   xdo move {-x -120,-x +120,-y -120,-y +120}
 
-# Resize floating window
+# Resize the selected floating window.
 super + alt + {Left,Right,Up,Down}
   xdo resize {-w -120,-w +120,-h -120,-h +120}
 
-# Move window to desktop
-super + {_,shift + }{1-9,0}
-  bspc {desktop -f,window -d} ^{1-9,10}
+# Focus the given desktop.
+super + {0-9}
+  bspc desktop -f {0-9}
 
-# Move window into preselection
-super + y
-  bspc window -w last.manual
+# Send the selected window to given desktop.
+super + shift + {0-9}
+  bspc window -d {0-9}
 
-# Preselect window splitting
+# Preselect the splitting area of the selected window.
 super + ctrl + {h,j,k,l}
   bspc window -p {left,down,up,right}
 
-# Reset preselection
-super + ctrl + {_,shift + }space
-  bspc {window -p cancel,desktop -c}
+# Transplant the selected window to the last preselection.
+super + y
+  bspc window -w last.manual
 
-# Focus last desktop
-super + Tab
-  bspc desktop -f last
-
-# Focus window under the cursor
+# Focus window at pointer.
 ~button1
   bspc pointer -g focus
 
-# Move or resize window with mouse
+# Move or resize window with pointer.
 super + button{1-3}
   bspc pointer -g {move,resize_side,resize_corner}
 
-# React to mouse clicks
+# Terminate the current pointer action.
 super + @button{1-3}
   bspc pointer -u
 
-#
-# System
-#
+# Reload sxhkd.
+super + shift + s
+  pkill -USR1 -x sxhkd
 
-# Raise volume
-XF86AudioRaiseVolume
-  vol +5
+# Quit WM.
+super + alt + Escape
+  pkill -x panel; pkill redshift; bspc quit
 
-# Lower volume
-XF86AudioLowerVolume
-  vol -5
-
-# Toggle volume
-XF86AudioMute
-  vol toggle
-
-#
-# Misc
-#
+# Volume
+XF86Audio{RaiseVolume,LowerVolume,Mute}
+  vol {+5,-5,toggle}
 
 # Terminal
 super + Return
@@ -131,11 +107,3 @@ Print
 # Uploaded screenshot
 shift + Print
   $BROWSER "$(scrot -e 'teknik $f && mv $f ~/pic/scrots')"
-
-# Kill panel
-super + shift + n
-  pkill panel; bspc config top_padding 0
-
-# Reload sxhkd
-super + shift + s
-  pkill -USR1 -x sxhkd

@@ -5,7 +5,7 @@
 TODO=~/.todo
 
 if [[ $# -eq 0 ]]; then
-  "$EDITOR" "$TODO"
+  $EDITOR "$TODO"
 else
   echo "$@" >> "$TODO"
 fi

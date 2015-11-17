@@ -1,63 +1,53 @@
 #!/bin/bash
 #
-# Markdown wrapper for CSS.
+# Markdown and CSS
 
-CSS=~/.markdown.css
-MARKDOWN="markdown --html4tags"
+css=~/.markdown.css
+markdown="markdown --html4tags"
 
-md() {
-  cat << EOF
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="initial-scale=1, maximuim-scale=1">
-${style}
-</head>
-<body>
-$($MARKDOWN "$@")
-</body>
-</html>
-EOF
-}
-
-embed='false'
-browser='false'
-help='false'
+embed=false
+browser=false
+help=false
 files=
 
 for arg; do
-  case "${arg}" in
-    -e|--embed) embed='true' ;;
-    -b|--browser) browser='true' ;;
-    -h|--help) help='true' ;;
+  case "$arg" in
+    -e|--embed) embed=true ;;
+    -b|--browser) browser=true ;;
+    -h|--help) help=true ;;
     *) files="${files} ${arg}" ;;
   esac
 done
 
-if [[ "$help" = 'true' ]] || [[ $# -eq 0 ]]; then
+if "$help" || [[ $# -eq 0 ]]; then
   echo 'usage: buildown [-e|--embed] [-b|--browser] <file ..>'
   exit 1
 fi
 
-if [[ ! -f "${CSS}" ]]; then
-  echo "warning: ${CSS} doesn't exist"
-fi
-
-if [[ "$embed" = 'true' ]]; then
-  style='<style>'"$(cat "${CSS}")"'</style>'
+if "$embed"; then
+  style="<style>$(cat "$css")</style>"
 else
-  style='<link rel="stylesheet" href="'"${CSS}"'">'
+  style="<link rel=\"stylesheet\" href=\"${css}\">"
 fi
 
-for file in ${files}; do
-  html="$(md "${file}")"
+for file in $files; do
+  html="<!DOCTYPE html>
+<html>
+<head>
+<meta charset=\"utf-8\">
+<meta name=\"viewport\" content=\"initial-scale=1, maximuim-scale=1\">
+${style}
+</head>
+<body>
+$($markdown "$file")
+</body>
+</html>"
 
-  if [[ "$browser" = 'true' ]]; then
+  if "$browser"; then
     out="${file}.html"
-    echo "${html}" > "${out}"
-    $BROWSER "${out}" && rm "${out}"
+    echo "$html" > "$out"
+    $BROWSER "$out" && rm "$out"
   else
-    echo "${html}"
+    echo "$html"
   fi
 done

@@ -1,16 +1,16 @@
 #!/bin/bash
 #
-# symlink dotfiles
+# Symlink dotfiles.
 
 dir="$(cd "$(dirname "$0")" && pwd)"
-files="$(cd "${dir}" && echo *)"
+files="$(cd "$dir" && echo *)"
 ignore="README.md symlink"
 
-for file in ${ignore}; do
+for file in $ignore; do
   files="${files/$file}"
 done
 
-for file in ${files}; do
+for file in $files; do
   echo -e "\E[40;32m${dir}/${file} -> ${HOME}/.${file}\E[0m"
   ln -snf "${dir}/${file}" "${HOME}/.${file}"
 done
