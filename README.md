@@ -9,9 +9,9 @@ Linux configuration files.
     git clone https://github.com/carlenlund/dotfiles
     cd dotfiles
 
-**Symlink:**
+**Install:**
 
-    ./symlink
+    ./install
 
 Note that this will overwrite existing files.
 
