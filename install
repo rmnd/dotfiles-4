@@ -1,0 +1,16 @@
+#!/bin/bash
+#
+# Install dotfiles.
+
+dir="$(cd "$(dirname "$0")" && pwd)"
+files="$(ls "$dir")"
+ignore="README.md install"
+
+for file in $ignore; do
+  files="${files/"$file"}"
+done
+
+for file in $files; do
+  printf "${dir}/${file} -> ${HOME}/.${file}\n"
+  ln -snf "${dir}/${file}" "${HOME}/.${file}"
+done
