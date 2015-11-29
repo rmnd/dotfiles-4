@@ -78,7 +78,7 @@ map <C-s> :w<CR>
 " Disable search match highlighting.
 map <leader>h :nohlsearch<CR>
 
-"Enable mouse usage.
+" Enable mouse usage.
 set mouse=a
 
 "" File
@@ -89,19 +89,3 @@ set noswapfile
 " Enable backup.
 set backup
 set backupdir=~/.vim/backup
-
-"" Plugin
-
-" Syntastic
-
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list=1
-let g:syntastic_auto_loc_list=1
-let g:syntastic_check_on_open=1
-let g:syntastic_check_on_wq=0
-
-let g:syntastic_c_compiler_options='-std=c11 -Wall -Wextra'
-let g:syntastic_cpp_compiler_options='-std=c++11 -Wall -Wextra'
