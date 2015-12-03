@@ -55,8 +55,10 @@ set laststatus=2
 " Enable syntax highlighting.
 syntax on
 
+" Use a dark version of the color scheme.
 set background=dark
 
+" Set colorscheme.
 colorscheme gruvbox
 
 "" Input
@@ -77,6 +79,9 @@ map <C-s> :w<CR>
 
 " Disable search match highlighting.
 map <leader>h :nohlsearch<CR>
+
+" Time waited for a mapped key sequence to complete.
+set timeoutlen=120
 
 " Enable mouse usage.
 set mouse=a
