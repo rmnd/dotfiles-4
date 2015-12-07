@@ -4,7 +4,7 @@ URxvt.internalBorder: 19
 URxvt.cursorBlink: true
 URxvt.scrollBar: false
 URxvt.perl-ext-common: default,matcher
-URxvt.url-launcher: /bin/firefox
+URxvt.url-launcher: /bin/browser
 URxvt.matcher.button: 1
 URxvt.font: xft:Roboto Mono:size=10
 Xcursor.size: 32

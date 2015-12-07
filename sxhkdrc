@@ -86,7 +86,7 @@ XF86Audio{RaiseVolume,LowerVolume,Mute}
 
 # Terminal
 super + Return
-  $TERMINAL
+  terminal
 
 # Launcher
 super + space
@@ -94,7 +94,7 @@ super + space
 
 # Browser
 super + x
-  $BROWSER
+  browser
 
 # Screenshot
 Print
@@ -102,4 +102,4 @@ Print
 
 # Uploaded screenshot
 shift + Print
-  $BROWSER "$(scrot -e 'teknik $f && mv $f ~/pic/scrots')"
+  browser "$(scrot -e 'teknik $f && mv $f ~/pic/scrots')"

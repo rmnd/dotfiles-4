@@ -28,6 +28,6 @@ Note that this will overwrite existing files.
 - Window manager: [bspwm](http://github.com/baskerville/bspwm)
 - Hotkey daemon: [sxhkd](http://github.com/baskerville/sxhkd)
 - Compositor: [compton](http://github.com/chjj/compton)
-- Bar: [lemonbar](http://github.com/LemonBoy/bar)
+- Panel: [lemonbar-xft](http://github.com/krypt-n/bar)
 - Terminal typeface: [Roboto Mono](http://github.com/google/fonts)
-- Bar typeface: [Roboto](http://github.com/google/fonts)
+- Panel typeface: [Roboto](http://github.com/google/fonts)
