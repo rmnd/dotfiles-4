@@ -48,6 +48,10 @@ super + alt + {Left,Right,Up,Down}
 super + {0-9}
   bspc desktop -f {0-9}
 
+# Select the previously focused desktop.
+super + Tab
+  bspc desktop -f last
+
 # Send the selected window to given desktop.
 super + shift + {0-9}
   bspc window -d {0-9}
