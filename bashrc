@@ -4,15 +4,13 @@
 # Prevent Ctrl-S from freezing the terminal.
 stty -ixon
 
-export PS1="\w $ "
-export HISTSIZE=1000
-export HISTFILESIZE=10000
+export PS1="\w \$ "
+export HISTSIZE=
+export HISTFILESIZE=
 
 alias ls="ls --color=auto"
 alias la="ls -A"
 alias grep="grep --color=auto"
-alias reload=". ~/.bashrc"
-alias reset="reset && reload"
 alias pacman="sudo pacman --color=always"
 
 mkcd() {

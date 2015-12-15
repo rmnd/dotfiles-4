@@ -49,7 +49,7 @@ trap "trap - TERM; kill 0" INT TERM QUIT EXIT
 [[ -e "$FIFO" ]] && rm "$FIFO"
 mkfifo "$FIFO"
 
-bspc config top_padding 40
+bspc config top_padding $(($HEIGHT - 1))
 
 bspc control --subscribe > "$FIFO" &
 xtitle -sf "T%s" -t 100 > "$FIFO" &
