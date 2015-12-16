@@ -16,7 +16,9 @@ super + {u,i,o}
 
 # Set the state for the selected window.
 super + {s,p,f}
-  bspc window -t {floating,pseudo_tiled,fullscreen}
+  state={floating,pseudo_tiled,fullscreen}; \
+  bspc query -W -w "focused.$\{state\}" && state=tiled; \
+  bspc window -t "$state"
 
 # Focus the given window.
 super + {h,j,k,l}
@@ -86,7 +88,7 @@ super + alt + Escape
 
 # Volume
 XF86Audio{RaiseVolume,LowerVolume,Mute}
-  vol {+5,-5,toggle}
+  amixer set Master {2%+,2%-,toggle}
 
 # Terminal
 super + Return
@@ -103,7 +105,3 @@ super + x
 # Screenshot
 Print
   scrot -e 'mv $f ~/pic/scrots'
-
-# Uploaded screenshot
-shift + Print
-  browser "$(scrot -e 'teknik $f && mv $f ~/pic/scrots')"

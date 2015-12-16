@@ -17,6 +17,6 @@ bspc config presel_border_color "#c0a08b"
 
 bspc monitor -d 1 2 3 4
 
-bspc rule -a urxvt-launcher floating=on
+bspc rule -a urxvt-launcher state=floating
 
 panel &
