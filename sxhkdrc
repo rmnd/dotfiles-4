@@ -64,7 +64,7 @@ super + ctrl + {h,j,k,l}
 
 # Transplant the selected window to the last preselection.
 super + y
-  bspc window -w last.manual
+  bspc window -w last.!automatic
 
 # Focus window at pointer.
 ~button1
