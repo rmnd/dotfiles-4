@@ -60,7 +60,10 @@ super + shift + {0-9}
 
 # Preselect the splitting area of the selected window.
 super + ctrl + {h,j,k,l}
-  bspc window -p {left,down,up,right}
+  dir={left,down,up,right}; \
+  cur=$(bspc query -T -w focused.!automatic | jshon -e splitDir -u 2>&-); \
+  [ "$dir" = "$cur" ] && dir=cancel; \
+  bspc window -p "$dir"
 
 # Transplant the selected window to the last preselection.
 super + y
