@@ -3,12 +3,12 @@
 # Panel using lemonbar.
 
 HEIGHT=41
-LINE_HEIGHT=13
+LINE_HEIGHT=12
 FONT="Roboto:size=11"
 COLOR_FOREGROUND="#ffffd7af"
 COLOR_BACKGROUND="#ff252525"
-COLOR_ACTIVE="#ff544f4c"
-COLOR_INACTIVE="#ff353535"
+COLOR_NORMAL="#ff3c3c3c"
+COLOR_FOCUSED="#ff645f5c"
 FIFO=/tmp/panel-fifo
 
 panel_bar() {
@@ -24,8 +24,8 @@ panel_bar() {
         set -- ${line#?}
         while [[ $# -gt 0 ]]; do
           case "$1" in
-            [OFU]*) desktops=" ${desktops}%{U${COLOR_ACTIVE}}%{+u}                %{-u}   " ;;
-            [ofu]*) desktops=" ${desktops}%{U${COLOR_INACTIVE}}%{+u}                %{-u}   " ;;
+            [ofu]*) desktops=" ${desktops}%{U${COLOR_NORMAL}}%{+u}                  %{-u}   " ;;
+            [OFU]*) desktops=" ${desktops}%{U${COLOR_FOCUSED}}%{+u}                  %{-u}   " ;;
           esac
           shift
         done
@@ -58,7 +58,7 @@ clock -sf "C%a %d %b %H:%M:%S" -i 1 > "$FIFO" &
 panel_bar < "$FIFO" | lemonbar \
     -g x"$HEIGHT" \
     -f "$FONT" \
-    -F "$COLOR_ACTIVE" \
+    -F "$COLOR_FOREGROUND" \
     -B "$COLOR_BACKGROUND" \
     -u "$LINE_HEIGHT" &
 

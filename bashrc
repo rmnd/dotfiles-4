@@ -11,7 +11,7 @@ export HISTFILESIZE=
 alias ls="ls --color=auto"
 alias la="ls -A"
 alias grep="grep --color=auto"
-alias pacman="pacman --color=always"
+alias pacman="sudo pacman --color=always"
 
 mkcd() {
   mkdir -p "$@" && cd "$@"

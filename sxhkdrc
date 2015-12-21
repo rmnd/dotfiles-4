@@ -85,9 +85,11 @@ super + @button{1-3}
 super + shift + s
   pkill -USR1 -x sxhkd
 
-# Quit WM.
+# Exit bspwm.
 super + alt + Escape
-  pkill -x panel; pkill redshift; bspc quit
+  pkill panel; \
+  pkill redshift; \
+  bspc quit
 
 # Volume
 XF86Audio{RaiseVolume,LowerVolume,Mute}
