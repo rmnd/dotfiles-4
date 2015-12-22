@@ -258,7 +258,7 @@ if version >= 508 || !exists("did_javascript_syn_inits")
   HiLink jsRegexpGroup          jsRegexpString
   HiLink jsRegexpCharClass      Character
   HiLink jsCharacter            Character
-  HiLink jsPrototype            Special
+  HiLink jsPrototype            Normal
   HiLink jsConditional          Conditional
   HiLink jsBranch               Conditional
   HiLink jsLabel                Label
@@ -279,7 +279,7 @@ if version >= 508 || !exists("did_javascript_syn_inits")
   HiLink jsParensErrB           Error
   HiLink jsParensErrC           Error
   HiLink jsOperatorWords        Special
-  HiLink jsOperator             Operator
+  HiLink jsOperator             Normal
   HiLink jsOf                   Operator
   HiLink jsStorageClass         StorageClass
   HiLink jsClass                Structure

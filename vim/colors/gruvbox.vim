@@ -557,7 +557,7 @@ hi! link Label GruvboxRed
 " try, catch, throw
 hi! link Exception GruvboxRed
 " sizeof, "+", "*", etc.
-hi! link Operator GruvboxNormal
+hi! link Operator GruvboxOrange
 " Any other keyword
 hi! link Keyword GruvboxOrange
 
