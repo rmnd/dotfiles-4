@@ -32,33 +32,32 @@ set number
 " Show cursor position.
 set ruler
 
+" Show current command.
+set showcmd
+
 " Show colored column.
 set colorcolumn=80
 
 " Highlight current line.
 set cursorline
 
-" Show current command.
-set showcmd
-
-" Show matching brackets.
+" Highlight matching brackets.
 set showmatch
 
 " Highlight search matches.
 set hlsearch
 
+" Disable fill characters.
+set fillchars=
+
 " Always show status line.
 set laststatus=2
-
-"" Color
 
 " Enable syntax highlighting.
 syntax on
 
-" Use a dark version of the color scheme.
-set background=dark
-
 " Set colorscheme.
+set background=dark
 colorscheme gruvbox
 
 "" Input
