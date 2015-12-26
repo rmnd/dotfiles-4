@@ -3,7 +3,7 @@
 # Install dotfiles.
 
 dir="$(cd "$(dirname "$0")" && pwd)"
-files="$(ls "${dir}")"
+files="$(ls "$dir")"
 ignore="README.md install"
 
 for file in $ignore; do
@@ -11,6 +11,8 @@ for file in $ignore; do
 done
 
 for file in $files; do
-  printf "\e[32m${dir/\/home\/*\//\~/}/${file} -> ~/.${file}\e[m\n"
-  ln -snf "${dir}/${file}" "${HOME}/.${file}"
+  src="${dir}/${file}"
+  link="${HOME}/.${file}"
+  printf "ln -snf ${src} ${link}\n"
+  ln -snf "$src" "$link"
 done
