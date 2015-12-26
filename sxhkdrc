@@ -97,7 +97,7 @@ XF86Audio{RaiseVolume,LowerVolume,Mute}
 
 # Terminal
 super + Return
-  terminal
+  urxvt
 
 # Launcher
 super + space
@@ -105,7 +105,7 @@ super + space
 
 # Browser
 super + x
-  browser
+  icecat
 
 # Screenshot
 Print
