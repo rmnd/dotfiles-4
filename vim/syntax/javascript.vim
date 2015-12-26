@@ -278,12 +278,12 @@ if version >= 508 || !exists("did_javascript_syn_inits")
   HiLink jsParensErrA           Error
   HiLink jsParensErrB           Error
   HiLink jsParensErrC           Error
-  HiLink jsOperatorWords        Special
+  HiLink jsOperatorWords        Statement
   HiLink jsOperator             Normal
   HiLink jsOf                   Operator
   HiLink jsStorageClass         StorageClass
   HiLink jsClass                Structure
-  HiLink jsThis                 Keyword
+  HiLink jsThis                 Special
   HiLink jsStatic               Special
   HiLink jsSuper                Special
   HiLink jsNan                  Number
