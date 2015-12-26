@@ -557,12 +557,12 @@ hi! link Label GruvboxRed
 " try, catch, throw
 hi! link Exception GruvboxRed
 " sizeof, "+", "*", etc.
-hi! link Operator GruvboxOrange
+hi! link Operator GruvboxFg1
 " Any other keyword
-hi! link Keyword GruvboxOrange
+hi! link Keyword GruvboxRed
 
 " Variable name
-hi! link Identifier GruvboxNormal
+hi! link Identifier GruvboxBlue
 " Function name
 hi! link Function GruvboxBlue
 
@@ -599,9 +599,9 @@ hi! link Type GruvboxYellow
 " static, register, volatile, etc
 hi! link StorageClass GruvboxRed
 " struct, union, enum, etc.
-hi! link Structure GruvboxOrange
+hi! link Structure GruvboxRed
 " typedef
-hi! link Typedef GruvboxYellow
+hi! link Typedef GruvboxRed
 
 " }}}
 " Completion Menu: {{{
@@ -622,10 +622,6 @@ endif
 
 call s:HL('DiffDelete', s:red, s:bg0, s:inverse)
 call s:HL('DiffAdd',    s:green, s:bg0, s:inverse)
-"call s:HL('DiffChange', s:bg0, s:blue)
-"call s:HL('DiffText',   s:bg0, s:yellow)
-
-" Alternative setting
 call s:HL('DiffChange', s:aqua, s:bg0, s:inverse)
 call s:HL('DiffText',   s:yellow, s:bg0, s:inverse)
 
@@ -651,11 +647,6 @@ let g:lightline = {
 " }}}
 
 " Filetype specific -----------------------------------------------------------
-" Shell: {{{
-
-"hi! link shFunction GruvboxGreen
-
-" }}}
 " Diff: {{{
 
 hi! link diffAdded GruvboxGreen
@@ -668,7 +659,7 @@ hi! link diffNewFile GruvboxYellow
 hi! link diffLine GruvboxBlue
 
 " }}}
-" Html: {{{
+" HTML: {{{
 
 hi! link htmlTag GruvboxBlue
 hi! link htmlEndTag GruvboxBlue
@@ -693,7 +684,7 @@ call s:HL('htmlUnderlineItalic', s:vim_fg, s:vim_bg, s:underline . s:italic)
 call s:HL('htmlItalic', s:vim_fg, s:vim_bg, s:italic)
 
 " }}}
-" Xml: {{{
+" XML: {{{
 
 hi! link xmlTag GruvboxBlue
 hi! link xmlEndTag GruvboxBlue
@@ -720,15 +711,7 @@ hi! link xmlEntityPunct GruvboxOrange
 " }}}
 " Vim: {{{
 
-call s:HL('vimCommentTitle', s:fg4, s:none)
-
-hi! link vimNotation GruvboxOrange
-hi! link vimBracket GruvboxOrange
-hi! link vimMapModKey GruvboxOrange
-hi! link vimFuncSID GruvboxFg3
-hi! link vimSetSep GruvboxFg3
-hi! link vimSep GruvboxFg3
-hi! link vimContinue GruvboxFg3
+call s:HL('vimCommentTitle', s:gray, s:none)
 
 " }}}
 " C: {{{
@@ -741,7 +724,7 @@ let c_no_curly_error=1
 hi! link pythonBuiltin GruvboxOrange
 hi! link pythonBuiltinObj GruvboxOrange
 hi! link pythonBuiltinFunc GruvboxOrange
-hi! link pythonFunction GruvboxAqua
+hi! link pythonFunction GruvboxFg1
 hi! link pythonDecorator GruvboxRed
 hi! link pythonInclude GruvboxBlue
 hi! link pythonImport GruvboxBlue
@@ -791,32 +774,32 @@ hi! link cssGeneratedContentProp GruvboxAqua
 " }}}
 " JavaScript: {{{
 
-" TODO: Fix colors.
-
 hi! link javaScript GruvboxFg1
 hi! link javaScriptBraces GruvboxFg1
-hi! link javaScriptFunction GruvboxAqua
+hi! link javaScriptFunction GruvboxBlue
 hi! link javaScriptIdentifier GruvboxRed
-hi! link javaScriptGlobal GruvboxNormal
-hi! link javaScriptType GruvboxYellow
-hi! link javaScriptMember GruvboxBlue
+hi! link javaScriptType GruvboxOrange
+hi! link javaScriptOperator GruvboxOrange
 hi! link javaScriptNumber GruvboxPurple
 hi! link javaScriptNull GruvboxPurple
+hi! link javaScriptGlobal GruvboxFg1
+hi! link javaScriptMember GruvboxFg1
+hi! link javaScriptMessage GruvboxFg1
 
 " }}}
 " Java: {{{
 
-hi! link javaDocTags GruvboxAqua
-hi! link javaCommentTitle GruvboxFg4
+hi! link javaAnnotation GruvboxBlue
+hi! link javaCommentTitle GruvboxGray
+hi! link javaDocTags GruvboxBlue
+hi! link javaDocParam GruvboxGray
+hi! link javaOperator GruvboxOrange
 hi! link javaParen GruvboxFg1
 hi! link javaParen1 GruvboxFg1
 hi! link javaParen2 GruvboxFg1
 hi! link javaParen3 GruvboxFg1
 hi! link javaParen4 GruvboxFg1
 hi! link javaParen5 GruvboxFg1
-hi! link javaOperator GruvboxOrange
-
-hi! link javaVarArg GruvboxGreen
 
 " }}}
 " Markdown: {{{

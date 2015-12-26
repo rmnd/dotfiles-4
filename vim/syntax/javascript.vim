@@ -30,19 +30,18 @@ syntax sync fromstart
 syntax match   jsNoise           /\%(:\|,\|\;\|\.\)/
 
 "" Program Keywords
-syntax keyword jsStorageClass    const var let
-syntax keyword jsOperatorWords   delete instanceof typeof void new in
-syntax match   jsOperator        /\(!\||\|&\|+\|-\|<\|>\|=\|%\|\/\|*\|\~\|\^\|||\|&&\)/
-syntax keyword jsBooleanTrue     true
-syntax keyword jsBooleanFalse    false
-syntax keyword jsModules         import export contained
-syntax keyword jsModuleWords     default from as contained
-syntax keyword jsOf              of contained
-syntax keyword jsArgsObj         arguments
+syntax keyword jsStorageClass   const var let
+syntax keyword jsOperator       delete instanceof typeof void new in
+syntax keyword jsBooleanTrue    true
+syntax keyword jsBooleanFalse   false
+syntax keyword jsModules        import export contained
+syntax keyword jsModuleWords    default from as contained
+syntax keyword jsOf             of contained
+syntax keyword jsArgsObj        arguments
 
 syntax region jsImportContainer      start="^\s\?import \?" end=";\|$" contains=jsModules,jsModuleWords,jsLineComment,jsComment,jsStringS,jsStringD,jsTemplateString,jsNoise,jsBlock
 
-syntax region jsExportContainer      start="^\s\?export \?" end="$" contains=jsModules,jsModuleWords,jsComment,jsTemplateString,jsStringD,jsStringS,jsRegexpString,jsNumber,jsFloat,jsThis,jsOperator,jsBooleanTrue,jsBooleanFalse,jsNull,jsFunction,jsArrowFunction,jsGlobalObjects,jsExceptions,jsDomErrNo,jsDomNodeConsts,jsHtmlEvents,jsDotNotation,jsBracket,jsParen,jsFuncCall,jsUndefined,jsNan,jsKeyword,jsClass,jsStorageClass,jsPrototype,jsBuiltins,jsNoise,jsAssignmentExpr,jsArgsObj,jsBlock,jsOperatorWords
+syntax region jsExportContainer      start="^\s\?export \?" end="$" contains=jsModules,jsModuleWords,jsComment,jsTemplateString,jsStringD,jsStringS,jsRegexpString,jsNumber,jsFloat,jsThis,jsOperator,jsBooleanTrue,jsBooleanFalse,jsNull,jsFunction,jsArrowFunction,jsGlobalObjects,jsExceptions,jsDomErrNo,jsDomNodeConsts,jsHtmlEvents,jsDotNotation,jsBracket,jsParen,jsFuncCall,jsUndefined,jsNan,jsKeyword,jsClass,jsStorageClass,jsPrototype,jsBuiltins,jsNoise,jsAssignmentExpr,jsArgsObj,jsBlock
 
 "" JavaScript comments
 syntax keyword jsCommentTodo    TODO FIXME XXX TBD contained
@@ -193,7 +192,7 @@ endif "DOM/HTML/CSS
 "" end DOM/HTML/CSS specified things
 
 "" Code blocks
-syntax cluster jsExpression contains=jsComment,jsLineComment,jsBlockComment,jsTaggedTemplate,jsTemplateString,jsStringD,jsStringS,jsRegexpString,jsNumber,jsFloat,jsThis,jsStatic,jsSuper,jsOperator,jsBooleanTrue,jsBooleanFalse,jsNull,jsFunction,jsArrowFunction,jsGlobalObjects,jsExceptions,jsFutureKeys,jsDomErrNo,jsDomNodeConsts,jsHtmlEvents,jsDotNotation,jsBracket,jsParen,jsBlock,jsFuncCall,jsUndefined,jsNan,jsKeyword,jsStorageClass,jsPrototype,jsBuiltins,jsNoise,jsCommonJS,jsAssignmentExpr,jsImportContainer,jsExportContainer,jsClass,jsArgsObj,jsDecorator,jsAsyncKeyword,jsOperatorWords
+syntax cluster jsExpression contains=jsComment,jsLineComment,jsBlockComment,jsTaggedTemplate,jsTemplateString,jsStringD,jsStringS,jsRegexpString,jsNumber,jsFloat,jsThis,jsStatic,jsSuper,jsOperator,jsBooleanTrue,jsBooleanFalse,jsNull,jsFunction,jsArrowFunction,jsGlobalObjects,jsExceptions,jsFutureKeys,jsDomErrNo,jsDomNodeConsts,jsHtmlEvents,jsDotNotation,jsBracket,jsParen,jsBlock,jsFuncCall,jsUndefined,jsNan,jsKeyword,jsStorageClass,jsPrototype,jsBuiltins,jsNoise,jsCommonJS,jsAssignmentExpr,jsImportContainer,jsExportContainer,jsClass,jsArgsObj,jsDecorator,jsAsyncKeyword
 syntax cluster jsAll        contains=@jsExpression,jsLabel,jsConditional,jsRepeat,jsReturn,jsStatement,jsTernaryIf,jsException
 syntax region  jsBracket    matchgroup=jsBrackets     start="\[" end="\]" contains=@jsAll,jsParensErrB,jsParensErrC,jsBracket,jsParen,jsBlock,@htmlPreproc fold
 syntax region  jsParen      matchgroup=jsParens       start="("  end=")"  contains=@jsAll,jsOf,jsParensErrA,jsParensErrC,jsParen,jsBracket,jsBlock,@htmlPreproc fold
@@ -241,6 +240,7 @@ if version >= 508 || !exists("did_javascript_syn_inits")
   HiLink jsCommentTodo          Todo
   HiLink jsCvsTag               Function
   HiLink jsDocTags              Function
+  HiLink jsDocSeeTag            Comment
   HiLink jsDocType              Comment
   HiLink jsDocTypeNoParam       Comment
   HiLink jsDocParam             Comment
@@ -258,7 +258,7 @@ if version >= 508 || !exists("did_javascript_syn_inits")
   HiLink jsRegexpGroup          jsRegexpString
   HiLink jsRegexpCharClass      Character
   HiLink jsCharacter            Character
-  HiLink jsPrototype            Normal
+  HiLink jsPrototype            Special
   HiLink jsConditional          Conditional
   HiLink jsBranch               Conditional
   HiLink jsLabel                Label
@@ -272,25 +272,24 @@ if version >= 508 || !exists("did_javascript_syn_inits")
   HiLink jsFunction             Function
   HiLink jsGenerator            jsFunction
   HiLink jsFuncName             Normal
-  HiLink jsArgsObj              Normal
+  HiLink jsArgsObj              Special
   HiLink jsError                Error
   HiLink jsParensError          Error
   HiLink jsParensErrA           Error
   HiLink jsParensErrB           Error
   HiLink jsParensErrC           Error
-  HiLink jsOperatorWords        Statement
-  HiLink jsOperator             Normal
+  HiLink jsOperator             Special
   HiLink jsOf                   Operator
   HiLink jsStorageClass         StorageClass
   HiLink jsClass                Structure
   HiLink jsThis                 Special
-  HiLink jsStatic               Special
+  HiLink jsStatic               Structure
   HiLink jsSuper                Special
   HiLink jsNan                  Number
   HiLink jsNull                 Number
   HiLink jsUndefined            Number
   HiLink jsNumber               Number
-  HiLink jsFloat                Float
+  HiLink jsFloat                Number
   HiLink jsBooleanTrue          Boolean
   HiLink jsBooleanFalse         Boolean
   HiLink jsNoise                Noise

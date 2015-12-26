@@ -21,9 +21,6 @@ set autoindent
 " Command history.
 set history=1000
 
-" Ignore character case when searching.
-set ignorecase
-
 "" UI
 
 " Show line numbers.
