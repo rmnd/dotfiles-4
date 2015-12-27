@@ -23,15 +23,3 @@ def_key "l"
 
 def_key "l"
   slave_screen
-
-def_key "left"
-  dummy
-
-def_key "right"
-  dummy
-
-def_key "+"
-  dummy
-
-def_key "-"
-  dummy
