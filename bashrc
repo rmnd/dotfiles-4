@@ -4,7 +4,7 @@
 # Prevent Ctrl-S from freezing the terminal.
 stty -ixon
 
-export PS1="\w \$ "
+export PS1="[\w]> "
 export HISTSIZE=
 export HISTFILESIZE=
 
