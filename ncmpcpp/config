@@ -1,0 +1,24 @@
+mpd_crossfade_time = "4"
+
+song_columns_list_format = "(6f)[red]{l} (40)[default]{t|f} (25)[yellow]{a} (30)[blue]{b}"
+song_status_format = "$8%t $1– $4%a $1–{ $5%b $1– }$0"
+song_window_title_format = "%t – %a – %b"
+
+header_visibility = "no"
+titles_visibility = "no"
+display_bitrate = "yes"
+
+state_flags_color = "white"
+main_window_color = "white"
+main_window_highlight_color = "white"
+statusbar_color = "white"
+
+progressbar_look = "─╼╌"
+progressbar_color = "yellow"
+progressbar_elapsed_color = "yellow"
+
+visualizer_type = "spectrum"
+visualizer_look = "##"
+visualizer_color = "blue cyan green yellow magenta red"
+visualizer_in_stereo = "yes"
+visualizer_sync_interval = "10"
