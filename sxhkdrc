@@ -101,7 +101,7 @@ super + Return
 
 # Launcher
 super + space
-  launcher
+  dmenu-launcher
 
 # Browser
 super + x

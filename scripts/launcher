@@ -1,5 +1,0 @@
-#!/bin/bash
-#
-# Launcher using urxvt.
-
-urxvt -geometry "80x5" -name "urxvt-launcher" -e sh -c "bash -t"
