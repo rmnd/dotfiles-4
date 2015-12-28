@@ -638,14 +638,6 @@ hi! link SyntasticWarningSign GruvboxYellowSign
 
 " }}}
 
-" Lightline: {{{
-
-let g:lightline = {
-  \ 'colorscheme': 'gruvbox',
-  \ }
-
-" }}}
-
 " Filetype specific -----------------------------------------------------------
 " Diff: {{{
 
@@ -682,31 +674,6 @@ call s:HL('htmlBoldUnderlineItalic', s:vim_fg, s:vim_bg, s:bold . s:underline . 
 call s:HL('htmlUnderline', s:vim_fg, s:vim_bg, s:underline)
 call s:HL('htmlUnderlineItalic', s:vim_fg, s:vim_bg, s:underline . s:italic)
 call s:HL('htmlItalic', s:vim_fg, s:vim_bg, s:italic)
-
-" }}}
-" XML: {{{
-
-hi! link xmlTag GruvboxBlue
-hi! link xmlEndTag GruvboxBlue
-hi! link xmlTagName GruvboxBlue
-hi! link xmlEqual GruvboxBlue
-hi! link docbkKeyword GruvboxAquaBold
-
-hi! link xmlDocTypeDecl GruvboxGray
-hi! link xmlDocTypeKeyword GruvboxPurple
-hi! link xmlCdataStart GruvboxGray
-hi! link xmlCdataCdata GruvboxPurple
-hi! link dtdFunction GruvboxGray
-hi! link dtdTagName GruvboxPurple
-
-hi! link xmlAttrib GruvboxAqua
-hi! link xmlProcessingDelim GruvboxGray
-hi! link dtdParamEntityPunct GruvboxGray
-hi! link dtdParamEntityDPunct GruvboxGray
-hi! link xmlAttribPunct GruvboxGray
-
-hi! link xmlEntity GruvboxOrange
-hi! link xmlEntityPunct GruvboxOrange
 
 " }}}
 " Vim: {{{

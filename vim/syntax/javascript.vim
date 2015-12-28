@@ -258,7 +258,7 @@ if version >= 508 || !exists("did_javascript_syn_inits")
   HiLink jsRegexpGroup          jsRegexpString
   HiLink jsRegexpCharClass      Character
   HiLink jsCharacter            Character
-  HiLink jsPrototype            Special
+  HiLink jsPrototype            Normal
   HiLink jsConditional          Conditional
   HiLink jsBranch               Conditional
   HiLink jsLabel                Label
@@ -302,7 +302,7 @@ if version >= 508 || !exists("did_javascript_syn_inits")
   HiLink jsTemplateVar          Special
   HiLink jsGlobalObjects        Normal
   HiLink jsExceptions           Special
-  HiLink jsFutureKeys           Special
+  HiLink jsFutureKeys           Normal
   HiLink jsBuiltins             Special
   HiLink jsModules              Include
   HiLink jsModuleWords          Include
@@ -313,7 +313,7 @@ if version >= 508 || !exists("did_javascript_syn_inits")
   HiLink jsDomElemAttrs         Label
   HiLink jsDomElemFuncs         PreProc
 
-  HiLink jsHtmlEvents           Special
+  HiLink jsHtmlEvents           Normal
   HiLink jsHtmlElemAttrs        Label
   HiLink jsHtmlElemFuncs        PreProc
 
