@@ -9,10 +9,10 @@ bspc config gapless_monocle true
 bspc config focus_by_distance true
 bspc config focus_follows_pointer true
 
-bspc config normal_border_color "#414041"
-bspc config urgent_border_color "#414041"
-bspc config focused_border_color "#645f5b"
-bspc config presel_border_color "#c0a08b"
+bspc config normal_border_color "#444342"
+bspc config urgent_border_color "#444342"
+bspc config focused_border_color "#928374"
+bspc config presel_border_color "#b2a394"
 
 bspc monitor -d 1 2 3 4
 

@@ -279,7 +279,7 @@ if exists('g:gruvbox_hls_cursor')
   let s:hls_cursor = get(s:gb, g:gruvbox_hls_cursor)
 endif
 
-let s:number_column = s:bg3
+let s:number_column = s:bg4
 let s:sign_column = s:bg1
 
 if exists('g:gitgutter_override_sign_column_highlight') &&
@@ -651,6 +651,14 @@ hi! link diffNewFile GruvboxYellow
 hi! link diffLine GruvboxBlue
 
 " }}}
+" Vim: {{{
+
+call s:HL('vimCommentTitle', s:gray, s:none)
+
+hi! link vimSetSep GruvboxFg1
+hi! link vimSep GruvboxFg1
+
+" }}}
 " HTML: {{{
 
 hi! link htmlTag GruvboxBlue
@@ -674,11 +682,6 @@ call s:HL('htmlBoldUnderlineItalic', s:vim_fg, s:vim_bg, s:bold . s:underline . 
 call s:HL('htmlUnderline', s:vim_fg, s:vim_bg, s:underline)
 call s:HL('htmlUnderlineItalic', s:vim_fg, s:vim_bg, s:underline . s:italic)
 call s:HL('htmlItalic', s:vim_fg, s:vim_bg, s:italic)
-
-" }}}
-" Vim: {{{
-
-call s:HL('vimCommentTitle', s:gray, s:none)
 
 " }}}
 " C: {{{

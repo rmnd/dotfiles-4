@@ -134,7 +134,7 @@ syntax keyword jsClass          extends class
 syntax keyword jsException      try catch throw finally
 syntax keyword jsAsyncKeyword   async await
 
-syntax keyword jsGlobalObjects   Array Boolean Date Function Iterator Number Object Symbol Map WeakMap Set RegExp String Proxy Promise ParallelArray ArrayBuffer DataView Float32Array Float64Array Int16Array Int32Array Int8Array Uint16Array Uint32Array Uint8Array Uint8ClampedArray Intl JSON Math console document window
+syntax keyword jsGlobalObjects  Array Boolean Date Function Iterator Number Object Symbol Map WeakMap Set RegExp String Proxy Promise ParallelArray ArrayBuffer DataView Float32Array Float64Array Int16Array Int32Array Int8Array Uint16Array Uint32Array Uint8Array Uint8ClampedArray Intl JSON Math console document window
 syntax match   jsGlobalObjects  /\%(Intl\.\)\@<=\(Collator\|DateTimeFormat\|NumberFormat\)/
 
 syntax keyword jsExceptions     Error EvalError InternalError RangeError ReferenceError StopIteration SyntaxError TypeError URIError
@@ -258,7 +258,7 @@ if version >= 508 || !exists("did_javascript_syn_inits")
   HiLink jsRegexpGroup          jsRegexpString
   HiLink jsRegexpCharClass      Character
   HiLink jsCharacter            Character
-  HiLink jsPrototype            Normal
+  HiLink jsPrototype            Special
   HiLink jsConditional          Conditional
   HiLink jsBranch               Conditional
   HiLink jsLabel                Label
@@ -300,7 +300,7 @@ if version >= 508 || !exists("did_javascript_syn_inits")
   HiLink jsFuncParens           Noise
   HiLink jsSpecial              Special
   HiLink jsTemplateVar          Special
-  HiLink jsGlobalObjects        Normal
+  HiLink jsGlobalObjects        Special
   HiLink jsExceptions           Special
   HiLink jsFutureKeys           Normal
   HiLink jsBuiltins             Special

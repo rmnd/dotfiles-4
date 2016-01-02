@@ -21,6 +21,9 @@ set autoindent
 " Command history.
 set history=1000
 
+" Ignore character case when searching.
+set ignorecase
+
 "" UI
 
 " Show line numbers.
@@ -43,9 +46,6 @@ set showmatch
 
 " Highlight search matches.
 set hlsearch
-
-" Disable fill characters.
-set fillchars=
 
 " Always show status line.
 set laststatus=2

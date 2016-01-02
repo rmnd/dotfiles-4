@@ -4,6 +4,8 @@
 # Prevent Ctrl-S from freezing the terminal.
 stty -ixon
 
+source ~/.vim/colors/gruvbox256.sh
+
 export PS1="\w \$ "
 export HISTSIZE=
 export HISTFILESIZE=

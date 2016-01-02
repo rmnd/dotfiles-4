@@ -8,5 +8,5 @@ dmenu_run \
   -fn "Roboto:size=11" \
   -nf "#ffd7af" \
   -nb "#262626" \
-  -sf "#ffd7af" \
-  -sb "#458588"
+  -sf "#262626" \
+  -sb "#928374"
