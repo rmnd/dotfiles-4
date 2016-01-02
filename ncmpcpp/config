@@ -1,4 +1,4 @@
-mpd_crossfade_time = "4"
+mpd_crossfade_time = "3"
 
 song_columns_list_format = "(6f)[red]{l} (40)[default]{t|f} (25)[yellow]{a} (30)[blue]{b}"
 song_status_format = "$8%t $1– $4%a $1–{ $5%b $1– }$0"

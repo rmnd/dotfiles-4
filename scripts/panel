@@ -24,8 +24,8 @@ panel_bar() {
         set -- ${line#?}
         while [[ $# -gt 0 ]]; do
           case "$1" in
-            [ofu]*) desktops=" ${desktops}%{U${COLOR_NORMAL}}%{+u}                  %{-u}   " ;;
-            [OFU]*) desktops=" ${desktops}%{U${COLOR_FOCUSED}}%{+u}                  %{-u}   " ;;
+            [ofu]*) desktops=" ${desktops}%{U${COLOR_NORMAL}}%{+u}                   %{-u}    " ;;
+            [OFU]*) desktops=" ${desktops}%{U${COLOR_FOCUSED}}%{+u}                   %{-u}    " ;;
           esac
           shift
         done
@@ -35,7 +35,7 @@ panel_bar() {
         time="%{F${COLOR_FOREGROUND}}${line,,}"
         ;;
     esac
-    printf "%s\n" "%{l}  ${title} %{c}${desktops} %{r}${time}  "
+    printf "%s\n" "%{l}  ${title} %{c}${desktops}%{r}${time}  "
   done
 }
 
