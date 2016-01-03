@@ -15,10 +15,6 @@ Linux configuration files.
 
 Note that this will overwrite existing files.
 
-## Screenshot
-
-![screenshot](http://i.imgur.com/ebLz1vX.png)
-
 ## Setup
 
 - **Distribution**: Arch Linux
