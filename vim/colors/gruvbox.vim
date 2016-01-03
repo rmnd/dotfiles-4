@@ -9,8 +9,6 @@
 " Supporting code -------------------------------------------------------------
 " Initialisation: {{{
 
-let g:gruvbox_termcolors=16
-
 if version > 580
   hi clear
   if exists("syntax_on")

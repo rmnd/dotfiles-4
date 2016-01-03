@@ -6,7 +6,7 @@ dmenu_run \
   -f \
   -h 41 \
   -fn "Roboto:size=11" \
-  -nf "#ffd7af" \
-  -nb "#262626" \
-  -sf "#262626" \
-  -sb "#928374"
+  -nf "#ebdbb2" \
+  -nb "#282828" \
+  -sf "#282828" \
+  -sb "#a89984"
