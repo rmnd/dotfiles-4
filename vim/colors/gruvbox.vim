@@ -812,7 +812,6 @@ hi! link jsonString GruvboxFg1
 
 " }}}
 
-
 " Functions -------------------------------------------------------------------
 " Search Highlighting Cursor {{{
 

@@ -77,7 +77,7 @@ map <C-s> :w<CR>
 map <leader>h :nohlsearch<CR>
 
 " Time waited for a mapped key sequence to complete.
-set timeoutlen=120
+set timeoutlen=300
 
 " Enable mouse usage.
 set mouse=a

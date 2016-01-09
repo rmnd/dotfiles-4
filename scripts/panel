@@ -8,7 +8,7 @@ FONT="Roboto:size=11"
 COLOR_FOREGROUND="#ebdbb2"
 COLOR_BACKGROUND="#262626"
 COLOR_NORMAL="#444342"
-COLOR_FOCUSED="#645f5c"
+COLOR_FOCUSED="#63605d"
 FIFO=/tmp/panel-fifo
 
 panel_bar() {

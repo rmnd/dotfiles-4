@@ -4,6 +4,7 @@
 # Prevent Ctrl-S from freezing the terminal.
 stty -ixon
 
+# Gruvbox color fix for 256-color terminals.
 source ~/.vim/colors/gruvbox256.sh
 
 export PS1="\w \$ "
