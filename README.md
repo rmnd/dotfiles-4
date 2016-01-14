@@ -2,6 +2,10 @@
 
 Linux configuration files.
 
+## Screenshot
+
+![screenshot](https://i.imgur.com/4BX4JXv.png)
+
 ## Install
 
 **Clone repository:**
