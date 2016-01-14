@@ -15,7 +15,7 @@ alias ls="ls --color=auto"
 alias la="ls -A"
 alias grep="grep --color=auto"
 alias pacman="sudo pacman --color=always"
-alias reset="reset && . ~/.bashrc"
+alias reset="reset && source ~/.bashrc"
 
 mkcd() {
   mkdir -p "$@" && cd "$@"
